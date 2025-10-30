@@ -32,7 +32,7 @@ All CSV files are **de-identified**. Large files are tracked with **Git LFS**.
 ## Visualizations
 | Figure | Description | GitHub Link |
 |--------|------------|-------------|
-| `Figure_1.png` | Visualizes patient outcomes, incidence, or severity | [View PNG](https://github.com/sofiastrisch/sepsis-analysis-project/blob/main/visualizations/Figure_1.png) |
+| `sepsis_outcomes_bar_graph.png` | Visualizes patient outcomes, incidence, or severity | [View PNG](https://github.com/sofiastrisch/sepsis-analysis-project/blob/main/visualizations/sepsis_outcomes_bar_graph.png) |
 
 ## How to Reproduce
 1. Clone the repository:
@@ -59,3 +59,4 @@ cd sepsis-analysis-project
 **Sofia Strisch**  
 Toronto, Canada  
 Registered Nurse | Data & Health Analytics Enthusiast
+
