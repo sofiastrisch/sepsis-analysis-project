@@ -5,18 +5,18 @@ This project analyzes sepsis trends, patient risk factors, and outcomes using a 
 ## Repository Structure
 
 sepsis-analysis-project/
-    data/
-        sepsis_project_clean_aggregated.csv
-        prediction_of_sepsis.csv
-    scripts/
-        interactive_sepsis.py
-        sepsis_analysis_bar_graph.py
-        sepsis_cleaning.py
-        sepsis_pathway_analysis.py
-    visualizations/
-        sepsis_bar_graph.png
-    .gitattributes
-    README.md
+  data/
+    sepsis_project_clean_aggregated.csv
+    prediction_of_sepsis.csv
+  scripts/
+    interactive_sepsis.py
+    sepsis_analysis_bar_graph.py
+    sepsis_cleaning.py
+    sepsis_pathway_analysis.py
+  visualizations/
+    sepsis_bar_graph.png
+  .gitattributes
+  README.md
 
 ## Overview
 
