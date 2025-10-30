@@ -1,0 +1,2 @@
+data/sepsis_project_clean_aggregated.csv filter=lfs diff=lfs merge=lfs -text
+data/prediction_of_sepsis.csv filter=lfs diff=lfs merge=lfs -text
