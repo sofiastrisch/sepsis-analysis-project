@@ -71,5 +71,3 @@ sepsis-analysis-project/
 ## Author
 
 Sofia Strisch  
-Toronto, Canada  
-Registered Nurse | Data & Health Analytics Enthusiast
