@@ -1,9 +1,7 @@
 import pandas as pd
 
-# Load aggregated dataset
 data = pd.read_csv('sepsis_project_clean_aggregated.csv')
 
-# Define your sepsis alert function
 
 
 def sepsis_flag(row):
@@ -31,14 +29,14 @@ def sepsis_flag(row):
     return 1 if score >= 6 else 0
 
 
-# Apply your pathway to all patients
+
 data['SepsisFlag'] = data.apply(sepsis_flag, axis=1)
 
-# Simple counts
+
 total_patients = len(data)
-# all patients who actually had sepsis
+
 total_septic = sum(data['SepsisLabel'] == 1)
-# all patients flagged by your code
+
 patients_flagged = sum(data['SepsisFlag'] == 1)
 correctly_flagged = sum((data['SepsisFlag'] == 1) & (
     data['SepsisLabel'] == 1))  # flagged AND actually septic
@@ -47,7 +45,7 @@ correctly_flagged = sum((data['SepsisFlag'] == 1) & (
 percent_of_septic_caught = correctly_flagged / total_septic * 100
 percent_of_flagged_were_septic = correctly_flagged / patients_flagged * 100
 
-# Print results with clear wording
+
 print("=== Sepsis Pathway Performance ===")
 print(f"Total patients: {total_patients}")
 print(f"Number of patients who actually had sepsis: {total_septic}")
