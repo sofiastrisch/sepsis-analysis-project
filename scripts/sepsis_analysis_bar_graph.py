@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('sepsis_project_clean_aggregated.csv')
 
-# apply sepsis pathway function
+
 
 def sepsis_flag(row):
     score = 0
@@ -33,17 +33,17 @@ def sepsis_flag(row):
 
 data['SepsisFlag'] = data.apply(sepsis_flag, axis=1)
 
-# actual septic patients
+
 actual_septic_caught = sum(
     (data['SepsisLabel'] == 1) & (data['SepsisFlag'] == 1))
 actual_septic_missed = sum(
     (data['SepsisLabel'] == 1) & (data['SepsisFlag'] == 0))
 
-# patients flagged by pathway
+
 flagged_correct = actual_septic_caught
 flagged_false = sum((data['SepsisFlag'] == 1) & (data['SepsisLabel'] == 0))
 
-# prepare data
+
 categories = ['Actual Septic Patients', 'Patients Flagged by Pathway']
 caught_missed = [actual_septic_caught, flagged_correct]
 missed_false = [actual_septic_missed, flagged_false]
