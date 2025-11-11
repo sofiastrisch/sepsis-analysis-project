@@ -1,9 +1,9 @@
 import pandas as pd
 
-# Load dataset
+
 data = pd.read_csv('prediction_of_sepsis.csv')
 
-# Keep only relevant columns for your sepsis detection tool
+
 vitals_labs = [
     'HR', 'SBP', 'DBP', 'MAP', 'Resp', 'Temp', 'O2Sat',
     'WBC', 'Lactate', 'Creatinine', 'Bilirubin_total', 'Platelets',
@@ -12,16 +12,12 @@ vitals_labs = [
 
 data = data[vitals_labs]
 
-# Drop duplicates
 data = data.drop_duplicates()
 
-# Drop rows with too many missing values (≥70% non-NaN)
 data = data.dropna(thresh=int(len(data.columns) * 0.7))
 
-# Fill remaining missing numeric values with column means
 data = data.fillna(data.mean(numeric_only=True))
 
-# Clinically realistic aggregation per patient
 agg_dict = {
     'HR': 'mean',                  # average heart rate
     'SBP': 'min',                  # lowest systolic BP
@@ -38,13 +34,13 @@ agg_dict = {
     'SepsisLabel': 'max'           # patient is flagged if any row had sepsis
 }
 
-# Group by patient
+
 patient_data = data.groupby('Patient_ID').agg(agg_dict).reset_index()
 
-# Round values for readability
+
 patient_data = patient_data.round(2)
 
-# Save aggregated dataset
+
 patient_data.to_csv('sepsis_project_clean_aggregated.csv', index=False)
 
 print("✅ Aggregation complete. Saved as sepsis_project_clean_aggregated.csv.")
